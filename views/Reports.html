@@ -1,0 +1,22 @@
+{% extends 'cdnloads.html' %}
+
+{% block content %}
+
+  <h1>{{title}}</h1>
+    <table class="sometable" style="width:100%">
+      <tr>
+        {% for column in columns %}
+          <th>{{column.name}}</th>
+        {% endfor %}
+      </tr>
+
+      {% for row in rows %}
+        <tr>
+          <td>{{row.name}}</td>
+          <td>{{row.age}}</td>
+          <td>{{row.type}}</td>
+        </tr>
+      {% endfor %}
+    </table>
+
+{% endblock %}

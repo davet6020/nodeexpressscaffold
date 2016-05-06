@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>{{title}}</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="../../../css/menu.css">
+</head>
+
+<body>
+  <div class='mainmenu'>
+  <ul>
+    <li class='active'><a href='/'><span>Home</span></a></li>
+    <li><a href='/elephants'><span>Elephants</span></a>
+      <ul class="">
+        <li><a href="/elephants/create">Create</a></li>
+        <li><a href='/elephants/read'>Read</a></li>
+        <li><a href="/elephants/update">Update</a></li>
+        <li><a href="/elephants/delete">Delete</a></li>
+      </ul>
+    </li>
+
+    <li><a href='/monkeys'><span>Monkeys</span></a>
+      <ul class="">
+        <li><a href="/monkeys/create">Create</a></li>
+        <li><a href='/monkeys/read'>Read</a></li>
+        <li><a href="/monkeys/update">Update</a></li>
+        <li><a href="/monkeys/delete">Delete</a></li>
+      </ul>
+    </li>
+
+    <li><a href='/tigers'><span>Tigers</span></a>
+      <ul class="">
+        <li><a href="/tigers/create">Create</a></li>
+        <li><a href='/tigers/read'>Read</a></li>
+        <li><a href="/tigers/update">Update</a></li>
+        <li><a href="/tigers/delete">Delete</a></li>
+      </ul>
+    </li>
+
+    <li><a href='/zebras'><span>Zebras</span></a>
+      <ul class="">
+        <li><a href="/zebras/create">Create</a></li>
+        <li><a href='/zebras/read'>Read</a></li>
+        <li><a href="/zebras/update">Update</a></li>
+        <li><a href="/zebras/delete">Delete</a></li>
+      </ul>
+    </li>
+
+    <li><a href='/reports'><span>Reports</span></a>
+      <ul class="">
+        <li><a href="/reports/allanimalsnameasc">All Animals (sorted by name asc)</a></li>
+        <li><a href="/reports/allanimalstypeasc">All Animals (sorted by type asc)</a></li>
+        <li><a href="/reports/allanimalsageasc">All Animals (sorted by age asc)</a></li>
+      </ul>
+    </li>
+
+    <li><a href='/search'><span>Search</span></a>
+    </li>
+
+    {% if loggedin == 'true' %}
+      <li class='last' style="float:right"><a href='/logout'><span>Logout</span></a></li>
+    {% else %}
+      <li class='last' style="float:right"><a href='/login'><span>Login</span></a></li>
+    {% endif %}
+
+  </ul>
+  </div>
+
+  {% block content %}{% endblock %}
+</body>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+</html>

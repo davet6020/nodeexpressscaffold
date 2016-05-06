@@ -1,0 +1,38 @@
+{% extends 'cdnloads.html' %}
+
+{% block content %}
+
+  <h1>{{title}}</h1>
+
+  <div class="container">
+    <!-- add search form -->
+    <form class="navbar-form navbar-right" role="search" method="POST" action="/search/search">
+
+        <div class="input-group col-lg-12">
+          <input type="text" class="form-control" name="searchTerm" placeholder="Search for animal information">
+          <span class="input-group-btn">
+            <button type="submit" class="btn btn-default">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </span>
+        </div>
+    </form>
+  </div>
+
+    <table class="sometable" style="width:100%">
+      <tr>
+        {% for column in columns %}
+          <th>{{column.name}}</th>
+        {% endfor %}
+      </tr>
+
+      {% for row in rows %}
+        <tr>
+          <td>{{row.name}}</td>
+          <td>{{row.age}}</td>
+          <td>{{row.type}}</td>
+        </tr>
+      {% endfor %}
+    </table>
+
+{% endblock %}

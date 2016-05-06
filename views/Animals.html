@@ -1,0 +1,21 @@
+  {% extends 'cdnloads.html' %}
+
+  {% block content %}
+    <h1>{{info}}</h1>
+
+    <table class="sometable" style="width:100%">
+      <tr>
+        {% for column in columns %}
+          <th>{{column.name}}</th>
+        {% endfor %}
+      </tr>
+
+      {% for animal in animals %}
+        <tr>
+          <td>{{animal.name}}</td>
+          <td>{{animal.age}}</td>
+        </tr>
+      {% endfor %}
+    </table>
+
+  {% endblock %}
